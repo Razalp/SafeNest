@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 17% 98%;
+    --foreground: 197 100% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 197 100% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 197 100% 20%;
+
+    --primary: 197 100% 36%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 197 100% 45%;
+    --primary-dark: 197 100% 28%;
+
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 197 100% 20%;
+
+    --muted: 210 17% 92%;
+    --muted-foreground: 197 50% 35%;
+
+    --accent: 197 80% 85%;
+    --accent-foreground: 197 100% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 197 30% 88%;
+    --input: 197 30% 88%;
+    --ring: 197 100% 36%;
+
+    --radius: 1rem;
+    
+    /* Custom design tokens */
+    --gradient-ocean: linear-gradient(135deg, hsl(197, 100%, 36%), hsl(197, 100%, 45%));
+    --gradient-light: linear-gradient(180deg, hsl(210, 17%, 98%), hsl(197, 80%, 95%));
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(197, 80%, 98%));
+    
+    --shadow-soft: 0 4px 20px -2px hsl(197 100% 36% / 0.1);
+    --shadow-medium: 0 8px 30px -4px hsl(197 100% 36% / 0.15);
+    --shadow-glow: 0 0 40px hsl(197 100% 45% / 0.3);
+    
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 197 100% 8%;
+    --foreground: 210 17% 98%;
+
+    --card: 197 100% 12%;
+    --card-foreground: 210 17% 98%;
+
+    --popover: 197 100% 12%;
+    --popover-foreground: 210 17% 98%;
+
+    --primary: 197 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 197 100% 55%;
+    --primary-dark: 197 100% 35%;
+
+    --secondary: 197 50% 15%;
+    --secondary-foreground: 210 17% 98%;
+
+    --muted: 197 50% 15%;
+    --muted-foreground: 197 30% 70%;
+
+    --accent: 197 50% 20%;
+    --accent-foreground: 210 17% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 17% 98%;
+
+    --border: 197 50% 20%;
+    --input: 197 50% 20%;
+    --ring: 197 100% 45%;
+    
+    --sidebar-background: 197 100% 10%;
+    --sidebar-foreground: 210 17% 98%;
+    --sidebar-primary: 197 100% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 197 50% 15%;
+    --sidebar-accent-foreground: 210 17% 98%;
+    --sidebar-border: 197 50% 20%;
+    --sidebar-ring: 197 100% 45%;
+    
+    --gradient-ocean: linear-gradient(135deg, hsl(197, 100%, 28%), hsl(197, 100%, 40%));
+    --gradient-light: linear-gradient(180deg, hsl(197, 100%, 8%), hsl(197, 80%, 12%));
+    --gradient-card: linear-gradient(145deg, hsl(197, 100%, 12%), hsl(197, 80%, 15%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    overflow-x: hidden;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    body {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-ocean);
+  }
+}
