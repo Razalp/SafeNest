@@ -11,7 +11,7 @@ const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,7 +21,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Form validation
     if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       toast({
@@ -62,13 +62,13 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
-      <div 
+      <div
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `radial-gradient(circle at 70% 50%, hsl(var(--primary)) 0%, transparent 50%)`,
         }}
       />
-      
+
       <div className="container mx-auto px-4 relative z-10" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -97,25 +97,25 @@ const Contact = () => {
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
-                  <div key={index} className="flex items-start">
-                    <div className="p-2.5 rounded-lg bg-primary/10 mr-3">
-                      <Icon className="w-5 h-5 text-primary" />
+                    <div key={index} className="flex items-start">
+                      <div className="p-2.5 rounded-lg bg-primary/10 mr-3">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1 text-sm">{info.title}</h4>
+                        {info.details.map((detail, idx) => (
+                          <p key={idx} className="text-muted-foreground font-body text-xs">
+                            {detail}
+                          </p>
+                        ))}
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-sm">{info.title}</h4>
-                      {info.details.map((detail, idx) => (
-                        <p key={idx} className="text-muted-foreground font-body text-xs">
-                          {detail}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
                   );
                 })}
               </div>
             </div>
 
-            <div 
+            <div
               className="p-6 rounded-2xl"
               style={{
                 background: "var(--gradient-ocean)",
@@ -123,7 +123,7 @@ const Contact = () => {
               }}
             >
               <h3 className="text-lg md:text-xl font-bold text-primary-foreground mb-3">
-                Why Choose SafeNest?
+                Why Choose PropsKeepers?
               </h3>
               <ul className="space-y-2 text-primary-foreground/90 font-body text-xs md:text-sm">
                 <li className="flex items-start">
@@ -151,7 +151,7 @@ const Contact = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <form 
+            <form
               onSubmit={handleSubmit}
               className="p-6 md:p-8 rounded-2xl"
               style={{

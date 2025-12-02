@@ -37,7 +37,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-lg md:text-xl font-bold text-primary-foreground mb-3">
-              SafeNest
+              PropsKeepers
             </h3>
             <p className="text-primary-foreground/80 font-body text-sm leading-relaxed">
               Your trusted property care partner in Malappuram. Providing peace of mind to NRI homeowners.
@@ -103,7 +103,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <p className="text-primary-foreground/70 font-body text-xs md:text-sm">
-              © 2025 SafeNest Malappuram. All rights reserved.
+              © 2025 PropsKeepers Malappuram. All rights reserved.
             </p>
             <div className="flex gap-6">
               <button className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-xs md:text-sm">

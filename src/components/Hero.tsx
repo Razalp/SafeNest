@@ -21,7 +21,7 @@ const Hero = () => {
 
   const handleWhatsApp = () => {
     window.open(
-      "https://wa.me/918606531933?text=Hi%20SafeNest%20Team!%20I'd%20like%20to%20learn%20about%20your%20Property%20Care%20Services.",
+      "https://wa.me/918606531933?text=Hi%20PropsKeepers%20Team!%20I'd%20like%20to%20learn%20about%20your%20Property%20Care%20Services.",
       "_blank"
     );
   };
@@ -46,8 +46,8 @@ const Hero = () => {
       </div>
 
       {/* Gradient Overlay */}
-      <div 
-        className="absolute inset-0" 
+      <div
+        className="absolute inset-0"
         style={{ background: "var(--gradient-light)" }}
       />
 
@@ -66,7 +66,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <span className="text-gradient block">SafeNest</span>
+              <span className="text-gradient block">PropsKeepers</span>
               <span className="text-foreground block">Malappuram</span>
             </motion.h1>
 
@@ -112,7 +112,7 @@ const Hero = () => {
             <div className="animate-float">
               <img
                 src={heroImage}
-                alt="SafeNest Property Care - Secure Home Management"
+                alt="PropsKeepers Property Care - Secure Home Management"
                 className="w-full h-auto rounded-3xl"
                 style={{ filter: "drop-shadow(0 20px 40px rgba(0, 119, 182, 0.3))" }}
               />

@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 const WhatsAppButton = () => {
   const handleClick = () => {
     window.open(
-      "https://wa.me/918606531933?text=Hi%20SafeNest%20Team!%20I'd%20like%20to%20learn%20about%20your%20Property%20Care%20Services.",
+      "https://wa.me/918606531933?text=Hi%20PropsKeepers%20Team!%20I'd%20like%20to%20learn%20about%20your%20Property%20Care%20Services.",
       "_blank"
     );
   };
@@ -23,7 +23,7 @@ const WhatsAppButton = () => {
       aria-label="Contact us on WhatsApp"
     >
       <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
-      
+
       {/* Ripple effect */}
       <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
     </motion.button>
