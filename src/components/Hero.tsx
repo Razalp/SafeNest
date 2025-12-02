@@ -66,7 +66,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <span className="text-primary-light block">PropsKeepers</span>
+              <span className="text-primary block" style={{ textShadow: '0 2px 10px rgba(0, 119, 182, 0.3)' }}>PropsKeepers</span>
               <span className="text-foreground block mt-2">Malappuram</span>
             </motion.h1>
 
