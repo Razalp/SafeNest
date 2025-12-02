@@ -61,17 +61,17 @@ const Hero = () => {
             className="text-center md:text-left"
           >
             <motion.h1
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <span className="text-gradient block">PropsKeepers</span>
-              <span className="text-foreground block">Malappuram</span>
+              <span className="text-gradient-premium block animate-shimmer bg-[length:200%_auto]">PropsKeepers</span>
+              <span className="text-foreground block mt-2">Malappuram</span>
             </motion.h1>
 
             <motion.p
-              className="text-sm sm:text-base md:text-lg mb-6 md:mb-8 text-muted-foreground font-body max-w-xl mx-auto md:mx-0 leading-relaxed"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 md:mb-10 text-muted-foreground font-body max-w-xl mx-auto md:mx-0 leading-relaxed font-medium"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
@@ -80,25 +80,25 @@ const Hero = () => {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               <Button
-                size="sm"
+                size="lg"
                 onClick={scrollToContact}
-                className="bg-primary hover:bg-primary-dark text-primary-foreground font-heading text-sm px-6 py-2 h-10 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-ocean hover:scale-105 text-primary-foreground font-heading text-base px-8 py-6 h-auto rounded-full shadow-strong hover:shadow-glow transition-all duration-300"
               >
-                Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                Get Started <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button
-                size="sm"
+                size="lg"
                 variant="outline"
                 onClick={handleWhatsApp}
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-heading text-sm px-6 py-2 h-10 rounded-full transition-all duration-300"
+                className="border-2 border-primary text-primary hover:bg-gradient-ocean hover:text-primary-foreground hover:border-transparent font-heading text-base px-8 py-6 h-auto rounded-full transition-all duration-300 hover:scale-105 hover:shadow-strong"
               >
-                <MessageCircle className="mr-2 w-4 h-4" /> WhatsApp Us
+                <MessageCircle className="mr-2 w-5 h-5" /> WhatsApp Us
               </Button>
             </motion.div>
           </motion.div>
@@ -109,12 +109,13 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             className="relative mt-8 md:mt-0"
           >
-            <div className="animate-float">
+            <div className="animate-float relative">
+              <div className="absolute inset-0 bg-gradient-ocean opacity-20 blur-3xl rounded-3xl"></div>
               <img
                 src={heroImage}
                 alt="PropsKeepers Property Care - Secure Home Management"
-                className="w-full h-auto rounded-3xl"
-                style={{ filter: "drop-shadow(0 20px 40px rgba(0, 119, 182, 0.3))" }}
+                className="w-full h-auto rounded-3xl relative z-10 shadow-premium border-4 border-white/20"
+                style={{ filter: "drop-shadow(0 25px 50px rgba(0, 119, 182, 0.4))" }}
               />
             </div>
           </motion.div>

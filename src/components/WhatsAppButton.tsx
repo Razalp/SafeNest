@@ -14,18 +14,18 @@ const WhatsAppButton = () => {
       onClick={handleClick}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-3 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-xl transition-all duration-300"
+      whileHover={{ scale: 1.15, rotate: 5 }}
+      whileTap={{ scale: 0.9 }}
+      className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 p-4 md:p-5 rounded-full bg-[#25D366] text-white shadow-strong hover:shadow-glow transition-all duration-300"
       style={{
-        boxShadow: "0 4px 20px rgba(37, 211, 102, 0.4)",
+        boxShadow: "0 8px 30px rgba(37, 211, 102, 0.5), 0 0 60px rgba(37, 211, 102, 0.3)",
       }}
       aria-label="Contact us on WhatsApp"
     >
-      <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
+      <MessageCircle className="w-7 h-7 md:w-8 md:h-8" />
 
       {/* Ripple effect */}
-      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
+      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />
     </motion.button>
   );
 };

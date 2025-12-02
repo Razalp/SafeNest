@@ -40,43 +40,44 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border/50"
-          : "bg-background/80 backdrop-blur-sm"
+          ? "glass-premium shadow-strong border-b border-border/60"
+          : "bg-background/85 backdrop-blur-md shadow-soft"
           }`}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-28">
             <button
               onClick={() => scrollToSection("home")}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 transition-transform duration-300 hover:scale-105"
             >
-              <img src={logo} alt="PropsKeepers Logo" className="h-20 w-auto" />
+              <img src={logo} alt="PropsKeepers Logo" className="h-24 w-auto drop-shadow-lg" />
             </button>
 
-            <div className="hidden md:flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-8">
               {navItems.map((item, index) => (
                 <button
                   key={index}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-xs font-medium text-foreground/60 hover:text-primary transition-colors duration-200"
+                  className="text-sm font-semibold text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110 relative group"
                 >
                   {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-ocean group-hover:w-full transition-all duration-300"></span>
                 </button>
               ))}
             </div>
 
             <button
               onClick={() => scrollToSection("contact")}
-              className="hidden md:block px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-medium hover:bg-primary-dark transition-all duration-200"
+              className="hidden md:block px-6 py-2.5 rounded-full bg-gradient-ocean text-primary-foreground text-sm font-semibold hover:scale-105 hover:shadow-glow transition-all duration-300 shadow-medium"
             >
               Get Started
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2"
+              className="md:hidden p-2 hover:bg-primary/10 rounded-lg transition-colors"
             >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -88,22 +89,22 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="fixed top-20 left-0 right-0 z-40 bg-background/98 backdrop-blur-lg border-b border-border/50 md:hidden"
+          className="fixed top-28 left-0 right-0 z-40 glass-premium border-b border-border/50 md:hidden"
         >
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex flex-col gap-3">
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex flex-col gap-4">
               {navItems.map((item, index) => (
                 <button
                   key={index}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200 text-left py-2"
+                  className="text-base font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105 text-left py-3 px-4 rounded-lg hover:bg-primary/10"
                 >
                   {item.name}
                 </button>
               ))}
               <button
                 onClick={() => scrollToSection("contact")}
-                className="mt-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary-dark transition-all duration-200 text-center"
+                className="mt-2 px-6 py-3 rounded-full bg-gradient-ocean text-primary-foreground text-base font-semibold hover:scale-105 hover:shadow-glow transition-all duration-300 text-center shadow-medium"
               >
                 Get Started
               </button>
