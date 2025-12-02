@@ -61,12 +61,12 @@ const Hero = () => {
             className="text-center md:text-left"
           >
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <span className="text-gradient-premium block animate-shimmer bg-[length:200%_auto]">PropsKeepers</span>
+              <span className="text-primary-light block">PropsKeepers</span>
               <span className="text-foreground block mt-2">Malappuram</span>
             </motion.h1>
 
@@ -86,19 +86,19 @@ const Hero = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               <Button
-                size="lg"
+                size="default"
                 onClick={scrollToContact}
-                className="bg-gradient-ocean hover:scale-105 text-primary-foreground font-heading text-base px-8 py-6 h-auto rounded-full shadow-strong hover:shadow-glow transition-all duration-300"
+                className="bg-primary/90 backdrop-blur-md hover:bg-primary hover:scale-105 text-primary-foreground font-heading text-sm px-6 py-2.5 h-auto rounded-full shadow-medium hover:shadow-strong transition-all duration-300"
               >
-                Get Started <ArrowRight className="ml-2 w-5 h-5" />
+                Get Started <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
               <Button
-                size="lg"
+                size="default"
                 variant="outline"
                 onClick={handleWhatsApp}
-                className="border-2 border-primary text-primary hover:bg-gradient-ocean hover:text-primary-foreground hover:border-transparent font-heading text-base px-8 py-6 h-auto rounded-full transition-all duration-300 hover:scale-105 hover:shadow-strong"
+                className="border-2 border-primary bg-background/60 backdrop-blur-md text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary font-heading text-sm px-6 py-2.5 h-auto rounded-full transition-all duration-300 hover:scale-105 hover:shadow-medium"
               >
-                <MessageCircle className="mr-2 w-5 h-5" /> WhatsApp Us
+                <MessageCircle className="mr-2 w-4 h-4" /> WhatsApp Us
               </Button>
             </motion.div>
           </motion.div>

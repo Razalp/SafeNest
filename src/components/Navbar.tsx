@@ -50,7 +50,7 @@ const Navbar = () => {
               onClick={() => scrollToSection("home")}
               className="flex items-center gap-2 transition-transform duration-300 hover:scale-105"
             >
-              <img src={logo} alt="PropsKeepers Logo" className="h-24 w-auto drop-shadow-lg" />
+              <img src={logo} alt="PropsKeepers Logo" className="h-32 w-auto drop-shadow-lg" />
             </button>
 
             <div className="hidden md:flex items-center gap-8">

@@ -21,7 +21,7 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: Phone, text: "+91 9446726286 / +91 9846352532" },
-    { icon: Mail, text: "safenestmalappuram@gmail.com" },
+    { icon: Mail, text: "propskeepers.com" },
     { icon: MapPin, text: "Malappuram, Kerala" },
   ];
 

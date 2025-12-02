@@ -51,7 +51,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["safenestmalappuram@gmail.com"],
+      details: ["propskeepers.com"],
     },
     {
       icon: MapPin,
