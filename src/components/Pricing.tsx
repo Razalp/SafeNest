@@ -8,11 +8,9 @@ const Pricing = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const plans = [
+  const services = [
     {
-      name: "Basic",
-      price: "₹999",
-      period: "/month",
+      name: "Basic Care",
       features: [
         "Monthly property inspection",
         "Photo & video reports",
@@ -22,9 +20,7 @@ const Pricing = () => {
       highlighted: false,
     },
     {
-      name: "Standard",
-      price: "₹1,999",
-      period: "/month",
+      name: "Standard Care",
       features: [
         "All Basic features",
         "Bi-weekly inspections",
@@ -36,9 +32,7 @@ const Pricing = () => {
       highlighted: true,
     },
     {
-      name: "Premium",
-      price: "₹2,999",
-      period: "/month",
+      name: "Premium Care",
       features: [
         "All Standard features",
         "Weekly inspections",
@@ -57,13 +51,13 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="py-20 relative overflow-hidden">
-      <div 
+      <div
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `radial-gradient(circle at 30% 50%, hsl(var(--primary)) 0%, transparent 50%)`,
         }}
       />
-      
+
       <div className="container mx-auto px-4 relative z-10" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -72,69 +66,58 @@ const Pricing = () => {
           className="text-center mb-12"
         >
           <h2 className="text-2xl md:text-4xl font-bold mb-4">
-            Simple <span className="text-gradient">Pricing</span>
+            Our <span className="text-gradient">Services</span>
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto font-body">
-            Choose the plan that best fits your property care needs
+            Comprehensive property care solutions tailored to your needs
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
+          {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: index * 0.2,
                 type: "spring",
                 stiffness: 100
               }}
-              whileHover={{ 
+              whileHover={{
                 y: -10,
                 transition: { duration: 0.3 }
               }}
-              className={`relative ${plan.highlighted ? 'md:-mt-4 md:mb-4' : ''}`}
+              className={`relative ${service.highlighted ? 'md:-mt-4 md:mb-4' : ''}`}
             >
-              {plan.highlighted && (
+              {service.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
                   Most Popular
                 </div>
               )}
-              
-              <div 
-                className={`p-6 rounded-3xl h-full flex flex-col transition-all duration-300 ${
-                  plan.highlighted ? 'border-2 border-primary' : ''
-                }`}
+
+              <div
+                className={`p-6 rounded-3xl h-full flex flex-col transition-all duration-300 ${service.highlighted ? 'border-2 border-primary' : ''
+                  }`}
                 style={{
-                  background: plan.highlighted ? "var(--gradient-ocean)" : "var(--gradient-card)",
-                  boxShadow: plan.highlighted ? "var(--shadow-medium)" : "var(--shadow-soft)",
+                  background: service.highlighted ? "var(--gradient-ocean)" : "var(--gradient-card)",
+                  boxShadow: service.highlighted ? "var(--shadow-medium)" : "var(--shadow-soft)",
                 }}
               >
-                <div className="mb-4">
-                  <h3 className={`text-lg md:text-xl font-bold mb-3 ${plan.highlighted ? 'text-primary-foreground' : ''}`}>
-                    {plan.name}
+                <div className="mb-6">
+                  <h3 className={`text-lg md:text-xl font-bold ${service.highlighted ? 'text-primary-foreground' : ''}`}>
+                    {service.name}
                   </h3>
-                  <div className="flex items-baseline">
-                    <span className={`text-3xl md:text-4xl font-bold ${plan.highlighted ? 'text-primary-foreground' : 'text-primary'}`}>
-                      {plan.price}
-                    </span>
-                    <span className={`ml-1 text-sm ${plan.highlighted ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
-                      {plan.period}
-                    </span>
-                  </div>
                 </div>
 
-                <ul className="space-y-2 mb-6 flex-grow">
-                  {plan.features.map((feature, idx) => (
+                <ul className="space-y-3 mb-6 flex-grow">
+                  {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
-                      <Check className={`w-4 h-4 mr-2 mt-0.5 flex-shrink-0 ${
-                        plan.highlighted ? 'text-primary-foreground' : 'text-primary'
-                      }`} />
-                      <span className={`font-body text-xs ${
-                        plan.highlighted ? 'text-primary-foreground/90' : 'text-foreground'
-                      }`}>
+                      <Check className={`w-5 h-5 mr-3 mt-0.5 flex-shrink-0 ${service.highlighted ? 'text-primary-foreground' : 'text-primary'
+                        }`} />
+                      <span className={`font-body text-sm ${service.highlighted ? 'text-primary-foreground/90' : 'text-foreground'
+                        }`}>
                         {feature}
                       </span>
                     </li>
@@ -143,13 +126,12 @@ const Pricing = () => {
 
                 <Button
                   onClick={scrollToContact}
-                  className={`w-full rounded-full py-2 h-9 text-xs font-semibold transition-all duration-300 ${
-                    plan.highlighted
+                  className={`w-full rounded-full py-2 h-10 text-sm font-semibold transition-all duration-300 ${service.highlighted
                       ? 'bg-primary-foreground text-primary hover:bg-primary-foreground/90'
                       : 'bg-primary text-primary-foreground hover:bg-primary-dark'
-                  }`}
+                    }`}
                 >
-                  Subscribe Now
+                  Learn More
                 </Button>
               </div>
             </motion.div>
