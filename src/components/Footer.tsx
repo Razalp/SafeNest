@@ -20,7 +20,7 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: Phone, text: "+91 9446726286 / +91 9846352532" },
+    { icon: Phone, text: "+91 86065 31933" },
     { icon: Mail, text: "propskeepers@gmail.com" },
     { icon: MapPin, text: "Malappuram, Kerala" },
   ];
